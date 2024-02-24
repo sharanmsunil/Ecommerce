@@ -33,6 +33,8 @@ dependencies:
   flutter_carousel_slider: ^1.1.0
   smooth_page_indicator: ^1.1.0
   google_fonts: ^6.1.0
+  provider: ^6.1.1
+  badges: ^3.1.2
 
 
   # The following adds the Cupertino Icons font to your application.

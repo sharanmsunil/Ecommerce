@@ -1,14 +1,32 @@
+import 'package:ecommerce/provider/cart_provider.dart';
+import 'package:ecommerce/screens/cart_page/cart_page.dart';
 import 'package:ecommerce/screens/favorites_tab.dart';
 import 'package:ecommerce/screens/home/home_tab.dart';
 import 'package:ecommerce/screens/profile_tab.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main(){
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: NavigatorEcommerce(),
-  ));
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (context)=> CartProvider())
+    ],
+    child: MyApp(),)
+  );
 }
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: NavigatorEcommerce(),
+    );
+  }
+}
+
 class NavigatorEcommerce extends StatefulWidget {
 
   @override
@@ -91,9 +109,7 @@ class _NavigatorEcommerceState extends State<NavigatorEcommerce> {
                       minWidth: 40,
                       onPressed: (){
                         setState(() {
-                          currentScreen=Center(
-                            child: Text("Bag"),
-                          );
+                          currentScreen=Cart_Page();
                           currentTab=3;
                         });
                       },

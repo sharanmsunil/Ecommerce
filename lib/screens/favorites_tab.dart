@@ -4,9 +4,9 @@ import 'detailpage/detail_page.dart';
 
 class Ecommerce_Favorite extends StatelessWidget {
   final List<allshoes> shoesdetails = [
-    allshoes(image: "assets/shoepics/NikeAirMax90.jpeg", name: "Nike Air Max 90", price: 100, desc: 'Nike Air Max 90'),
-    allshoes(image: "assets/shoepics/NikeAF1Shadow.jpeg", name: "Nike AF1 Shadow", price: 130, desc: 'Nike AF1 Shadow'),
-    allshoes(image: "assets/shoepics/NikeCourtLegacyNext.jpeg", name: "Nike Court Legacy Next", price: 90, desc: 'Nike Court Legacy Next'),
+    allshoes(image: "assets/shoepics/NikeAirMax90.jpeg", name: "Nike Air Max 90", price: 100, desc: 'Nike Air Max 90', count: 0),
+    allshoes(image: "assets/shoepics/NikeAF1Shadow.jpeg", name: "Nike AF1 Shadow", price: 130, desc: 'Nike AF1 Shadow', count: 0),
+    allshoes(image: "assets/shoepics/NikeCourtLegacyNext.jpeg", name: "Nike Court Legacy Next", price: 90, desc: 'Nike Court Legacy Next', count: 0),
   ];
 
   @override
@@ -25,7 +25,7 @@ class Ecommerce_Favorite extends StatelessWidget {
           itemBuilder: (context,index){
             return InkWell(
               onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Detail_Screen(data : allshoes(name : shoesdetails[index].name, image: shoesdetails[index].image, price: shoesdetails[index].price, desc: shoesdetails[index].desc))));
+                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Detail_Screen(data : allshoes(name : shoesdetails[index].name, image: shoesdetails[index].image, price: shoesdetails[index].price, desc: shoesdetails[index].desc, count: 0))));
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),

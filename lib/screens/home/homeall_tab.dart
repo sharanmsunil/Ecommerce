@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 
 class Home_AllTab extends StatelessWidget{
   final List<allshoes> shoesdetails = [
-    allshoes(image: "assets/allshoes/air-max-90-futura-shoes-CL8cvW.jpg", name: "Nike Air Max 90", desc: "Women's Shoes - Popular", price: 150),
-    allshoes(image: "assets/allshoes/air-force-1-shadow-shoes-3d774m.png", name: "Nike AF1 Shadow", desc: "Women's Shoes - Just in", price: 130),
-    allshoes(image: "assets/allshoes/images.jpeg", name: "Nike Court Legacy", desc: "Women's Shoes", price: 150),
-    allshoes(image: "assets/allshoes/download.jpeg", name: "Nike Court Legacy Next", desc: "Women's Shoes", price: 100),
-    allshoes(image: "assets/allshoes/123-joyride-cdp-apla-xa-xp.jpg", name: "Nike Joyride Run Flyknit", desc: "Choose Your Joyride", price: 200),
-    allshoes(image: "assets/allshoes/check-out-the-5-best-nike-sneakers-for-dance.jpg", name: "Nike Air Force 1s", desc: "For a Staple in Hip-Hop", price: 120),
+    allshoes(image: "assets/allshoes/air-max-90-futura-shoes-CL8cvW.jpg", name: "Nike Air Max 90", desc: "Women's Shoes - Popular", price: 150, count: 0),
+    allshoes(image: "assets/allshoes/air-force-1-shadow-shoes-3d774m.png", name: "Nike AF1 Shadow", desc: "Women's Shoes - Just in", price: 130, count: 0),
+    allshoes(image: "assets/allshoes/images.jpeg", name: "Nike Court Legacy", desc: "Women's Shoes", price: 150, count: 0),
+    allshoes(image: "assets/allshoes/download.jpeg", name: "Nike Court Legacy Next", desc: "Women's Shoes", price: 100, count: 0),
+    allshoes(image: "assets/allshoes/123-joyride-cdp-apla-xa-xp.jpg", name: "Nike Joyride Run Flyknit", desc: "Choose Your Joyride", price: 200, count: 0),
+    allshoes(image: "assets/allshoes/check-out-the-5-best-nike-sneakers-for-dance.jpg", name: "Nike Air Force 1s", desc: "For a Staple in Hip-Hop", price: 120, count: 0),
   ];
 
   @override
@@ -21,7 +21,7 @@ class Home_AllTab extends StatelessWidget{
         itemBuilder: (context,index){
           return InkWell(
             onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Detail_Screen(data : allshoes(name : shoesdetails[index].name, image: shoesdetails[index].image, desc: shoesdetails[index].desc, price: shoesdetails[index].price))));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Detail_Screen(data : allshoes(name : shoesdetails[index].name, image: shoesdetails[index].image, desc: shoesdetails[index].desc, price: shoesdetails[index].price, count: 0))));
             },
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),

@@ -5,9 +5,9 @@ import '../detailpage/detail_page.dart';
 
 class Jordan_Tab extends StatelessWidget {
   final List<allshoes> shoesdetails=[
-    allshoes(image: "assets/allshoes/download.jpeg", name: "Nike Joyride Run Flyknit", desc: "Choose Your Joyride",price: 200),
-    allshoes(image: "assets/shoepics/air-max-90-futura-shoes-CL8cvW.jpg",name: "Nike Air Max 90", desc: "Choose Your Joyride",price: 80),
-    allshoes(image: "assets/allshoes/123-joyride-cdp-apla-xa-xp.jpg",name: "Nike Joyride Run Flyknit", desc: "Choose Your Joyride",price: 200),
+    allshoes(image: "assets/allshoes/download.jpeg", name: "Nike Joyride Run Flyknit", desc: "Choose Your Joyride",price: 200, count: 0),
+    allshoes(image: "assets/shoepics/air-max-90-futura-shoes-CL8cvW.jpg",name: "Nike Air Max 90", desc: "Choose Your Joyride",price: 80, count: 0),
+    allshoes(image: "assets/allshoes/123-joyride-cdp-apla-xa-xp.jpg",name: "Nike Joyride Run Flyknit", desc: "Choose Your Joyride",price: 200, count: 0),
   ];
 
   @override
@@ -18,7 +18,7 @@ class Jordan_Tab extends StatelessWidget {
         itemBuilder: (context,index){
           return InkWell(
             onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Detail_Screen(data : allshoes(name : shoesdetails[index].name, image: shoesdetails[index].image, desc: shoesdetails[index].desc, price: shoesdetails[index].price))));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Detail_Screen(data : allshoes(name : shoesdetails[index].name, image: shoesdetails[index].image, desc: shoesdetails[index].desc, price: shoesdetails[index].price, count: 0))));
             },
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
